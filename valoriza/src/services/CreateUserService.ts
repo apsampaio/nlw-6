@@ -13,6 +13,10 @@ class CreateUserService {
   async run({ name, email, admin }: iRequest): Promise<User> {
     const usersRepository = getCustomRepository(UsersRepository);
 
+    if (!email || !name) {
+      throw new Error("Name and Email required");
+    }
+
     const userAlreadyExists = await usersRepository.findOne({
       where: { email },
     });
