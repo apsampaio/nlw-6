@@ -1,7 +1,8 @@
-import { User } from "../entities/User";
-
 import { getCustomRepository } from "typeorm";
 import { UsersRepository } from "../repositories/UsersRepository";
+import { User } from "../entities/User";
+
+import AppError from "../error/AppError";
 
 type iRequest = {
   name: string;
@@ -14,7 +15,7 @@ class CreateUserService {
     const usersRepository = getCustomRepository(UsersRepository);
 
     if (!email || !name) {
-      throw new Error("Name and Email required");
+      throw new AppError("Name and Email required");
     }
 
     const userAlreadyExists = await usersRepository.findOne({
@@ -22,7 +23,7 @@ class CreateUserService {
     });
 
     if (userAlreadyExists) {
-      throw new Error("User already exists");
+      throw new AppError("User already exists");
     }
 
     const user = usersRepository.create({ name, email, admin });
