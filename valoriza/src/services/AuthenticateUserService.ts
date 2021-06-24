@@ -6,10 +6,10 @@ import AppError from "../error/AppError";
 import { compare } from "bcryptjs";
 import { sign } from "jsonwebtoken";
 
-interface iRequest {
+type iRequest = {
   email: string;
   password: string;
-}
+};
 class AuthenticateUserService {
   async run({ email, password }: iRequest): Promise<string> {
     const usersRepository = getCustomRepository(UsersRepository);
