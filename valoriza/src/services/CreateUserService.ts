@@ -14,7 +14,7 @@ type iRequest = {
 };
 
 class CreateUserService {
-  async run({ name, email, admin, password }: iRequest): Promise<User> {
+  async run({ name, email, admin = false, password }: iRequest): Promise<User> {
     const usersRepository = getCustomRepository(UsersRepository);
 
     if (!email || !name || !password) {
