@@ -22,6 +22,10 @@ router.post(
   createTagController.handle
 );
 router.post("/login", authenticateUserController.handle);
-router.post("/compliment", createComplimentController.handle);
+router.post(
+  "/compliment",
+  ensureAuthenticated,
+  createComplimentController.handle
+);
 
 export { router };
