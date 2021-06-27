@@ -21,9 +21,8 @@ export const SignIn: React.FC = () => {
       />
       <View style={style.content}>
         <Text style={style.title}>
-          Organize {"\n"}
-          suas jogatinas {"\n"}
-          facilmente
+          Conecte-se {"\n"}e organize suas {"\n"}
+          jogatinas
         </Text>
 
         <Text style={style.subtitle}>
