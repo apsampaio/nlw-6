@@ -25,9 +25,8 @@ export const Category: React.FC<Props> = ({
     <RectButton style={style.container} {...rest}>
       <LinearGradient colors={[secondary50, secondary70]}>
         <View style={[style.content, { opacity: checked ? 1 : 0.4 }]}>
-          <View style={checked ? style.checked : style.check}>
-            <Icon width={48} height={48} />
-          </View>
+          <View style={checked ? style.checked : style.check} />
+          <Icon width={48} height={48} />
           <Text style={style.title}>{title}</Text>
         </View>
       </LinearGradient>
