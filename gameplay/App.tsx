@@ -10,7 +10,8 @@ import {
 } from "@expo-google-fonts/rajdhani";
 
 import { Background } from "./src/components/Background";
-import { SignIn } from "./src/screens/SignIn";
+
+import { Routes } from "./src/routes";
 
 export default function App() {
   const [isLoading] = useFonts({
@@ -31,7 +32,7 @@ export default function App() {
         backgroundColor="transparent"
         translucent
       />
-      <SignIn />
+      <Routes />
     </Background>
   );
 }
