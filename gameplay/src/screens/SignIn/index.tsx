@@ -30,7 +30,7 @@ export const SignIn: React.FC = () => {
           Crie grupos para jogar seus games {"\n"}
           favoritos com seus amigos
         </Text>
-        <ButtonIcon />
+        <ButtonIcon title="Entrar com Discord" activeOpacity={0.7} />
       </View>
     </View>
   );
