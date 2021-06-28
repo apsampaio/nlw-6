@@ -11,7 +11,11 @@ import { ListDivider } from "../../components/ListDivider";
 import { Appointment } from "../../components/Appointment";
 import { Background } from "../../components/Background";
 
+import { useNavigation } from "@react-navigation/native";
+
 export const Home: React.FC = () => {
+  const navigation = useNavigation();
+
   const [category, setCategory] = useState("");
 
   const appointments = [
@@ -47,6 +51,10 @@ export const Home: React.FC = () => {
     categoryId === category ? setCategory("") : setCategory(categoryId);
   }
 
+  function handleAppointmentDetails() {
+    navigation.navigate("AppointmentDetails");
+  }
+
   return (
     <Background>
       <View style={style.header}>
@@ -62,7 +70,9 @@ export const Home: React.FC = () => {
         <FlatList
           data={appointments}
           keyExtractor={(item) => item.id}
-          renderItem={({ item }) => <Appointment data={item} />}
+          renderItem={({ item }) => (
+            <Appointment onPress={handleAppointmentDetails} data={item} />
+          )}
           ItemSeparatorComponent={() => <ListDivider />}
           style={style.matches}
           showsVerticalScrollIndicator={false}
