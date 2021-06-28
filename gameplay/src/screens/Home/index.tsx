@@ -9,6 +9,7 @@ import { Profile } from "../../components/Profile";
 import { ListHeader } from "../../components/ListHeader";
 import { ListDivider } from "../../components/ListDivider";
 import { Appointment } from "../../components/Appointment";
+import { Background } from "../../components/Background";
 
 export const Home: React.FC = () => {
   const [category, setCategory] = useState("");
@@ -47,7 +48,7 @@ export const Home: React.FC = () => {
   }
 
   return (
-    <View style={style.container}>
+    <Background>
       <View style={style.header}>
         <Profile />
         <ButtonAdd />
@@ -67,6 +68,6 @@ export const Home: React.FC = () => {
           showsVerticalScrollIndicator={false}
         />
       </View>
-    </View>
+    </Background>
   );
 };
