@@ -1,20 +1,46 @@
 import React from "react";
-import { LinearGradient } from "expo-linear-gradient";
-import { Image } from "react-native";
+import { View, Text } from "react-native";
 
 import { style } from "./styles";
 import { theme } from "../../global/styles/theme";
 
-type Props = {
-  urlImage: string;
+import { Avatar } from "../Avatar";
+
+export type MemberProps = {
+  id: string;
+  username: string;
+  avatar_url: string;
+  status: string;
 };
 
-export const Member: React.FC<Props> = ({ urlImage }) => {
-  const { secondary50, secondary70 } = theme.colors;
+type Props = {
+  data: MemberProps;
+};
+
+export const Member: React.FC<Props> = ({ data }) => {
+  const { primary, on } = theme.colors;
+  const isOnline = data.status === "online";
+  const { username, status, avatar_url } = data;
 
   return (
-    <LinearGradient style={style.container} colors={[secondary50, secondary70]}>
-      <Image source={{ uri: urlImage }} style={style.avatar} />
-    </LinearGradient>
+    <View style={style.container}>
+      <Avatar urlImage={avatar_url} />
+      <View>
+        <Text style={style.title}>{username}</Text>
+        <View style={style.status}>
+          <View
+            style={[
+              style.bulletStatus,
+              {
+                backgroundColor: isOnline ? on : primary,
+              },
+            ]}
+          />
+          <Text style={style.nameStatus}>
+            {isOnline ? "Disponível" : "Ocupado"}
+          </Text>
+        </View>
+      </View>
+    </View>
   );
 };

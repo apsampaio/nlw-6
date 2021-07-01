@@ -3,11 +3,31 @@ import { theme } from "../../global/styles/theme";
 
 export const style = StyleSheet.create({
   container: {
-    width: 49,
-    height: 49,
-    borderRadius: 8,
+    width: "100%",
+    flexDirection: "row",
     alignItems: "center",
-    justifyContent: "center",
-    marginRight: 22,
+  },
+
+  title: {
+    fontFamily: theme.fonts.title700,
+    color: theme.colors.heading,
+    fontSize: 18,
+  },
+  status: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+
+  bulletStatus: {
+    width: 8,
+    height: 8,
+    borderRadius: 4,
+    marginRight: 9,
+  },
+
+  nameStatus: {
+    fontFamily: theme.fonts.text400,
+    color: theme.colors.highlight,
+    fontSize: 13,
   },
 });
