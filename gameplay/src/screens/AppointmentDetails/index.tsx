@@ -11,6 +11,7 @@ import { ListHeader } from "../../components/ListHeader";
 import { Header } from "../../components/Header";
 import { Member } from "../../components/Member";
 import { ListDivider } from "../../components/ListDivider";
+import { ButtonIcon } from "../../components/ButtonIcon";
 
 import { theme } from "../../global/styles/theme";
 
@@ -58,6 +59,9 @@ export const AppointmentDetails: React.FC = () => {
         ItemSeparatorComponent={() => <ListDivider />}
         style={style.members}
       />
+      <View style={style.footer}>
+        <ButtonIcon title="Entrar na partida" />
+      </View>
     </Background>
   );
 };

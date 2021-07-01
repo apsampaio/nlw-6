@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 import { theme } from "../../global/styles/theme";
-import { getStatusBarHeight } from "react-native-iphone-x-helper";
+import { getBottomSpace } from "react-native-iphone-x-helper";
 
 export const style = StyleSheet.create({
   container: {
@@ -35,5 +35,11 @@ export const style = StyleSheet.create({
   members: {
     marginLeft: 24,
     marginTop: 27,
+  },
+
+  footer: {
+    paddingHorizontal: 24,
+    paddingVertical: 20,
+    marginBottom: getBottomSpace(),
   },
 });
