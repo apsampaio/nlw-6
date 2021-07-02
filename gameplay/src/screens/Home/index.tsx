@@ -55,11 +55,15 @@ export const Home: React.FC = () => {
     navigation.navigate("AppointmentDetails");
   }
 
+  function handleAppointmentCreate() {
+    navigation.navigate("AppointmentCreate");
+  }
+
   return (
     <Background>
       <View style={style.header}>
         <Profile />
-        <ButtonAdd />
+        <ButtonAdd onPress={handleAppointmentCreate} />
       </View>
       <CategorySelect
         categorySelected={category}
