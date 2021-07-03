@@ -12,7 +12,7 @@ type Props = {
 };
 
 const Guilds: React.FC<Props> = ({ handleGuildSelected }) => {
-  const guilds = [
+  const guilds: GuildProps[] = [
     {
       id: "1",
       name: "Lendários",

@@ -12,12 +12,7 @@ import { Feather } from "@expo/vector-icons";
 import { style } from "./styles";
 import { theme } from "../../global/styles/theme";
 
-type GuildProps = {
-  id: string;
-  name: string;
-  icon: string | null;
-  owner: boolean;
-};
+import { GuildProps } from "../Appointment";
 
 type Props = TouchableOpacityProps & {
   data: GuildProps;
@@ -28,7 +23,7 @@ const Guild: React.FC<Props> = ({ data, ...rest }) => {
 
   return (
     <TouchableOpacity style={style.container} activeOpacity={0.7} {...rest}>
-      <GuildIcon urlImage={icon!} />
+      <GuildIcon />
       <View style={style.content}>
         <View>
           <Text style={style.title}>{name}</Text>

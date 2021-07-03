@@ -14,7 +14,7 @@ import { theme } from "../../global/styles/theme";
 export type GuildProps = {
   id: string;
   name: string;
-  icon: React.FC<SvgProps> | null;
+  icon: React.FC<SvgProps> | null | string;
   owner: boolean;
 };
 

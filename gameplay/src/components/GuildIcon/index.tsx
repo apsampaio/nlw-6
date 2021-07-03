@@ -4,7 +4,7 @@ import { Image } from "react-native";
 import { style } from "./styles";
 
 type Props = {
-  urlImage: string;
+  urlImage?: string;
 };
 
 export const GuildIcon: React.FC<Props> = ({ urlImage }) => {
