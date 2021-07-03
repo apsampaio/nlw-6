@@ -19,7 +19,7 @@
         <img alt="typescript" src="https://img.shields.io/badge/-TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
         <img alt="expo" src="https://img.shields.io/badge/-Expo-000020?style=flat-square&logo=expo" />
         <br/>
-        <img alt="Gameplay" src="https://img.shields.io/badge/Gameplay-NLW 6.0-04d361?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAALVBMVEVHcExxWsF0XMJzXMJxWcFsUsD///9jRrzY0u6Xh9Gsn9n39fyMecy0qd2bjNJWBT0WAAAABHRSTlMA2Do606wF2QAAAGlJREFUGJVdj1cWwCAIBLEsRU3uf9xobDH8+GZwUYi8i6ucJwrxKE+7D0G9Q4vlYqtmCSjndr4CgCgzlyFgfKfKCVO0LrPKjmiqMxGXkJwNnXskqWG+1oSM+BSwD8f29YLNjvx/OQrn+g99oQSoNmt3PgAAAABJRU5ErkJggg==&labelColor=8257e5" />
+        <img src="https://img.shields.io/static/v1?label=NLW&message=06&color=E51C44&labelColor=0A1033" alt="NLW 06" />
 </p>
 
 ## 🎮 Projeto: Gameplay
@@ -30,15 +30,44 @@ Aplicativo para lhe ajudar a conectar-se e organiza o momento de diversão e jog
 
 Este projeto foi construído utilizando:
 
-- [React Native](https://reactnative.dev/)
-- [Expo](https://expo.io/)
-- [Typescript](https://www.typescriptlang.org/)
+- [ ] React Native
+- [ ] Typescript
+- [ ] Expo
+- [ ] Context API
+- [ ] Async Storage
+- [ ] Vector Icons
+- [ ] React Native Svg e Svg Transform
+- [ ] Axios
+- [ ] Gradient colors
+- [ ] OAuth2 Discord
+- [ ] Expo Google Fonts
+- [ ] React Navigation Stack
+- [ ] React Native Gesture Handler
+- [ ] Expo Authentication
+- [ ] React Native Share
+- [ ] Deep Link
+
+## 💫 Features
+
+- ✅ Autenticação Social OAuth2 com servidor do Discord.
+- ✅ Obtém perfil do usuário cadastro no Discord (username e avatar);
+- ✅ Lista os servidores do Discord que o usuário faz parte;
+- ✅ Permite realizar o agendamento de partidas;
+- ✅ Permite filtrar as partidas por categoria;
+- ✅ Exibe se a partida foi agendada em um servidor próprio (anfitrião) ou em servidores de outros (convidado);
+- ✅ Compartilha o convite para ingressar no servidor do usuário;
+- ✅ Permite redirecionar o usuário para o seu próprio servidor;
+- ✅ Disponibiliza a função de Logout.
 
 ## 🚴‍♂️ Rodando Projeto
 
 - Instale as dependências do projeto `yarn`
 
 - Inicie o Expo Metro Bundler rodando `expo start` ou `yarn start`
+
+## 🔖 Layout
+
+Você pode visualizar o layout do projeto através [desse link](https://www.figma.com/file/0kv33XYjvOgvKGKHBaiR07/GamePlay-NLW-Together?node-id=58913%3A83). É necessário ter conta no [Figma](http://figma.com/) para acessá-lo.
 
 ## 📢 Contribuição
 
