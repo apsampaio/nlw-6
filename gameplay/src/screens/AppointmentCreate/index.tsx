@@ -9,7 +9,6 @@ import {
   KeyboardAvoidingView,
   Platform,
 } from "react-native";
-import { style } from "./styles";
 
 import { Background } from "../../components/Background";
 import { CategorySelect } from "../../components/CategorySelect";
@@ -18,16 +17,31 @@ import { GuildIcon } from "../../components/GuildIcon";
 import { SmallInput } from "../../components/SmallInput";
 import { TextArea } from "../../components/TextArea";
 import { Button } from "../../components/Button";
+import { ModalView } from "../../components/ModalView";
+import { Guilds } from "../Guilds";
+import { GuildProps } from "../../components/Appointment";
 
 import { Feather } from "@expo/vector-icons";
 
+import { style } from "./styles";
 import { theme } from "../../global/styles/theme";
 
 export const AppointmentCreate: React.FC = () => {
   const [category, setCategory] = useState("");
+  const [openGuildsModal, setOpenGuildsModal] = useState(false);
+  const [guild, setGuild] = useState<GuildProps>({} as GuildProps);
 
   function handleCategorySelect(categoryId: string) {
     categoryId === category ? setCategory("") : setCategory(categoryId);
+  }
+
+  function handleOpenGuilds() {
+    setOpenGuildsModal(true);
+  }
+
+  function handleGuildSelect(guildSelected: GuildProps) {
+    setGuild(guildSelected);
+    setOpenGuildsModal(false);
   }
 
   return (
@@ -56,14 +70,17 @@ export const AppointmentCreate: React.FC = () => {
             setCategory={handleCategorySelect}
           />
           <View style={style.form}>
-            <RectButton>
+            <RectButton onPress={handleOpenGuilds}>
               <View style={style.select}>
-                {
-                  // <View style={style.image} />
+                {guild.icon ? (
                   <GuildIcon urlImage="http://github.com/apsampaio.png" />
-                }
+                ) : (
+                  <View style={style.image} />
+                )}
                 <View style={style.selectBody}>
-                  <Text style={style.label}>Selecione um servidor</Text>
+                  <Text style={style.label}>
+                    {guild.name ? guild.name : "Selecione um servidor"}
+                  </Text>
                 </View>
                 <Feather
                   name="chevron-right"
@@ -110,6 +127,9 @@ export const AppointmentCreate: React.FC = () => {
           </View>
         </Background>
       </ScrollView>
+      <ModalView visible={openGuildsModal}>
+        <Guilds handleGuildSelected={handleGuildSelect} />
+      </ModalView>
     </KeyboardAvoidingView>
   );
 };
