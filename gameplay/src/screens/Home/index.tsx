@@ -69,19 +69,18 @@ export const Home: React.FC = () => {
         categorySelected={category}
         setCategory={handleCategorySelect}
       />
-      <View style={style.content}>
-        <ListHeader title="Partidas agendadas" subtitle="Total 6" />
-        <FlatList
-          data={appointments}
-          keyExtractor={(item) => item.id}
-          renderItem={({ item }) => (
-            <Appointment onPress={handleAppointmentDetails} data={item} />
-          )}
-          ItemSeparatorComponent={() => <ListDivider />}
-          style={style.matches}
-          showsVerticalScrollIndicator={false}
-        />
-      </View>
+      <ListHeader title="Partidas agendadas" subtitle="Total 6" />
+      <FlatList
+        data={appointments}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => (
+          <Appointment onPress={handleAppointmentDetails} data={item} />
+        )}
+        ItemSeparatorComponent={() => <ListDivider />}
+        contentContainerStyle={{ paddingBottom: 69 }}
+        style={style.matches}
+        showsVerticalScrollIndicator={false}
+      />
     </Background>
   );
 };

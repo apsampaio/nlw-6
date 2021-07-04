@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text } from "react-native";
 import { SvgProps } from "react-native-svg";
 import { RectButton, RectButtonProps } from "react-native-gesture-handler";
+import { LinearGradient } from "expo-linear-gradient";
 
 import { style } from "./styles";
 import PlayerInfoSVG from "../../assets/player.svg";
@@ -34,11 +35,16 @@ export const Appointment: React.FC<Props> = ({ data, ...rest }) => {
   const [category] = categories.filter((item) => item.id === data.category);
   const { owner } = data.guild;
 
-  const { primary, on } = theme.colors;
+  const { primary, on, secondary50, secondary70 } = theme.colors;
   return (
     <RectButton {...rest}>
       <View style={style.container}>
-        <GuildIcon urlImage="https://avatars.githubusercontent.com/u/51516616?v=4" />
+        <LinearGradient
+          style={style.guildIconContainer}
+          colors={[secondary50, secondary70]}
+        >
+          <GuildIcon urlImage="https://avatars.githubusercontent.com/u/51516616?v=4" />
+        </LinearGradient>
         <View style={style.content}>
           <View style={style.header}>
             <Text style={style.title}>{data.guild.name}</Text>

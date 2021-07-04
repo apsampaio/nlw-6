@@ -29,9 +29,11 @@ const Guilds: React.FC<Props> = ({ handleGuildSelected }) => {
         renderItem={({ item }) => (
           <Guild data={item} onPress={() => handleGuildSelected(item)} />
         )}
-        ItemSeparatorComponent={() => <ListDivider />}
+        ItemSeparatorComponent={() => <ListDivider isCentered />}
+        ListHeaderComponent={() => <ListDivider isCentered />}
         showsVerticalScrollIndicator={false}
         style={style.guilds}
+        contentContainerStyle={{ paddingBottom: 68, paddingTop: 103 }}
       />
     </View>
   );

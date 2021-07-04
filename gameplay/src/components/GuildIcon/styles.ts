@@ -3,9 +3,8 @@ import { theme } from "../../global/styles/theme";
 
 export const style = StyleSheet.create({
   image: {
-    width: 104,
-    height: 104,
+    width: 63,
+    height: 67,
     borderRadius: 8,
-    marginRight: 20,
   },
 });
