@@ -59,14 +59,13 @@ class _HomePageState extends State<HomePage> {
           children: [
             IconButton(
                 onPressed: () {
-                  controller.setPage(0);
-                  setState(() {});
+                  // controller.setPage(0);
+                  // setState(() {});
+                  Navigator.pushNamed(context, "/barcode_scanner");
                 },
                 icon: Icon(Icons.home, color: AppColors.primary)),
             GestureDetector(
-              onTap: () {
-                print("clicou");
-              },
+              onTap: () {},
               child: Container(
                 width: 56,
                 height: 56,
