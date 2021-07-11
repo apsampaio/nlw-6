@@ -59,26 +59,25 @@ class _HomePageState extends State<HomePage> {
           children: [
             IconButton(
                 onPressed: () {
-                  // controller.setPage(0);
-                  // setState(() {});
-                  Navigator.pushNamed(context, "/barcode_scanner");
+                  controller.setPage(0);
+                  setState(() {});
                 },
                 icon: Icon(Icons.home, color: AppColors.primary)),
             GestureDetector(
-              onTap: () {},
+              onTap: () async {
+                await Navigator.pushNamed(context, "/barcode_scanner");
+                setState(() {});
+              },
               child: Container(
-                width: 56,
-                height: 56,
-                decoration: BoxDecoration(
-                    color: AppColors.primary,
-                    borderRadius: BorderRadius.circular(5)),
-                child: IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.add_box_outlined,
-                      color: AppColors.shape,
-                    )),
-              ),
+                  width: 56,
+                  height: 56,
+                  decoration: BoxDecoration(
+                      color: AppColors.primary,
+                      borderRadius: BorderRadius.circular(5)),
+                  child: Icon(
+                    Icons.add_box_outlined,
+                    color: AppColors.shape,
+                  )),
             ),
             IconButton(
                 onPressed: () {
