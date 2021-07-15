@@ -1,4 +1,4 @@
-defmodule Wabanex.User.Get do
+defmodule Wabanex.Users.Get do
   alias Wabanex.{Repo, User}
   alias Ecto.UUID
 
